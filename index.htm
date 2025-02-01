@@ -38,6 +38,15 @@
               adlamFont: ["ADLaM Display", "serif"],
               soraFont: ["Sora", "serif"],
             },
+            keyframes: {
+          typing: {
+            "0%": { width: "0ch", visibility: "visible" },
+            "100%": { width: "clamp(20ch, 80vw, 28ch)" } 
+          },
+        },
+        animation: {
+          typing: "typing 3s steps(28, end) infinite, .7s infinite",
+        },
           },
         },
       };
@@ -51,9 +60,9 @@
             rgba(0, 0, 0, 0.445) 59%,
             rgba(183, 86, 183, 0.418) 100%
           ),
-          url("./assets/cat-big.png");
+          url("./assets/client banner.jpg");
         background-position: center;
-        background-size: contain;
+        background-size: cover;
         background-repeat: no-repeat;
       }
 
@@ -64,48 +73,10 @@
             rgba(0, 0, 0, 0.445) 59%,
             rgb(172, 210, 253, 0.418) 100%
           ),
-          url("./assets/cat-big.png");
+          url("./assets/client banner.jpg");
         background-position: center;
-        background-size: contain;
+        background-size: cover;
         background-repeat: no-repeat;
-      }
-
-      .writingAnimation {
-        display: inline-block; /* Essential for width animation */
-        overflow: hidden;
-        white-space: nowrap;
-        margin: 0 auto;
-        letter-spacing: 0.15em;
-        animation: typing 3.5s steps(40, end) 1, pause 3s 3.5s 1,
-          typing-second 3.5s steps(40, end) 6.5s infinite;
-      }
-
-      @keyframes typing {
-        from {
-          width: 0;
-        }
-        to {
-          width: 100%;
-        }
-      }
-
-      @keyframes typing-second {
-        /* Separate animation for infinite loop */
-        from {
-          width: 0;
-        }
-        to {
-          width: 100%;
-        }
-      }
-
-      @keyframes pause {
-        from {
-          width: 100%;
-        }
-        to {
-          width: 100%;
-        }
       }
     </style>
   </head>
@@ -217,10 +188,10 @@
       <!-- Banner Section -->
       <div class="w-10/12 lg:11/12 mx-auto">
         <div class="relative top-96 lg:top-0 md:top-44">
-          <img class="mx-auto" src="assets/cat-big.png" alt="" />
+          <img class="mx-auto animate-fadeIn" src="assets/cat-big.png" alt="" />
         </div>
         <div class="absolute top-20 lg:top-36">
-          <h1 class="font-adlamFont text-5xl pb-4 writingAnimation">
+          <h1 class="animate-typing overflow-hidden pr-2 font-adlamFont text-xl sm:text-2xl md:text-3xl lg:text-5xl pb-4 text-black w-fit max-w-[90vw]">
             Pamper Your Pet, <br />
             Because They Deserve <br />the Bes
           </h1>
@@ -604,13 +575,16 @@
         <h1 class="font-bold text-4xl mb-12 font-adlamFont">
           What Our Customers Say
         </h1>
-        <div class="carousel w-full">
+        <div class="carousel w-full relative">
+          <div class="absolute">
+            <h1>hello</h1>
+          </div>
           <!-- Slide 1 -->
           <div id="slide1" class="carousel-item relative w-full background">
             <div class="flex flex-col-reverse p-12 lg:p-24 mx-auto">
               <!-- Text Content -->
               <div class="space-y-7 text-center font-soraFont">
-                <h1 class="font-bold text-xl pt-5 text-white">
+                <h1 class="font-bold text-xl pt-5 text-black">
                   Jhankar Mahbub
                 </h1>
                 <small class="text-white">Sr.Web Developer</small>
